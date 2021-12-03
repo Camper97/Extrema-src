@@ -4,8 +4,8 @@
   //preloader
   $(window).bind("load", function () {
     // makes sure the whole site is loaded
-    $("#status").delay(700).fadeOut(); // will first fade out the loading animation
-    $("#preloader").delay(1100).fadeOut("slow"); // will fade out the white DIV that covers the website.
+    $("#status").fadeOut(); // will first fade out the loading animation
+    $("#preloader").delay(450).fadeOut("slow"); // will fade out the white DIV that covers the website.
   });
 
   //Page scrolling
@@ -90,6 +90,9 @@
     });
   });
 
+  // Video responsive
+  $("body").fitVids();
+
   //replace the data-background into background image
   $(".img-bg").each(function () {
     var imG = $(this).data("background");
@@ -111,6 +114,62 @@
     }
   });
 
+  //portfolio ajax setting
+  $(document).ready(function () {
+    $(".port-ajax").click(function () {
+      var toLoad = $(this).attr("data-link") + " .worksajax > *";
+      $(".worksajax").slideUp("slow", loadContent);
+
+      function loadContent() {
+        $(".worksajax").load(toLoad, "", showNewContent);
+      }
+
+      function showNewContent() {
+        $.getScript("js/portfolio.js");
+        $(".worksajax").slideDown("slow");
+      }
+      return false;
+    });
+  });
+  //portfolio scrolling
+  $(function () {
+    $(".port-ajax").bind("click", function (event) {
+      var $anchor = $("#work-ajax");
+
+      $("html, body")
+        .stop()
+        .animate(
+          {
+            scrollTop: $($anchor).offset().top - 93,
+          },
+          1000,
+          "linear"
+        );
+      event.preventDefault();
+    });
+  });
+
+  //isotope setting(portfolio)
+  var $container = $(".portfolio-body");
+  $container.imagesLoaded(function () {
+    $container.isotope();
+  });
+
+  // filter items when filter link is clicked
+  $(".port-filter a").click(function () {
+    var selector = $(this).attr("data-filter");
+    $container.isotope({
+      itemSelector: ".port-item",
+      filter: selector,
+    });
+    return false;
+  });
+  //adding active state to portfolio filtr
+  $(".port-filter a").click(function (e) {
+    $(".port-filter a").removeClass("active");
+    $(this).addClass("active");
+  });
+
   //background ticker
   $(".big-ticker:has(>div:eq(1))").list_ticker({
     speed: 5000,
@@ -121,4 +180,44 @@
   if (Modernizr.touch) {
     $("body").addClass("no-para");
   }
+
+  //google map load after all page finish
+  $(window)
+    .bind("load", function () {
+      $("#map_canvas").gmap({
+        center: "-6.94010,107.62575",
+        zoom: 15,
+        scrollwheel: false,
+        disableDefaultUI: false,
+        styles: [
+          {
+            stylers: [
+              {
+                lightness: 7,
+              },
+              {
+                saturation: -100,
+              },
+            ],
+          },
+        ],
+        callback: function () {
+          var self = this;
+          self
+            .addMarker({
+              position: this.get("map").getCenter(),
+              icon: "images/office-building.png",
+            })
+            .click(function () {
+              self.openInfoWindow(
+                {
+                  content: $(".map-content").html(),
+                },
+                this
+              );
+            });
+        },
+      });
+    })
+    .load();
 })(jQuery);
