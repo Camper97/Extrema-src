@@ -2327,7 +2327,7 @@
   border: 0;
 }
 .sr-only-focusable:active,
-.sr-only-focusable:focus {
+.sr-only-focusa ble:focus {
   position: static;
   width: auto;
   height: auto;

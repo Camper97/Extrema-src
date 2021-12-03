@@ -14,12 +14,9 @@ SLIDER SECTION
 CONTENTS SECTION
 ABOUT SECTION
 BIG BACKGROUND SECTION
-PORTFOLIO SECTION
 PRICING TABLE
 CONTACT SECTION
-MAP SECTION
 FOOTER SECTION
-BLOG SECTION
 --SIDEBAR SECTION
 --COMMENTS SECTION
 MEDIA QUERIES
@@ -33,7 +30,7 @@ html {
   height: 100%;
 }
 body {
-  color: rgb(0, 0, 0);
+  color: #888;
   font-size: 14px;
   line-height: 1.7;
   background-color: #fff;
@@ -70,14 +67,6 @@ h6 {
   font-weight: bold;
   font-family: "Cinzel", serif;
   color: #000;
-}
-hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 40%;
-  margin-right: 40%;
-  border: 0;
-  border-top: 1px solid #5555554f;
 }
 iframe {
   border: none;
@@ -274,14 +263,6 @@ ol {
   position: relative;
   z-index: 1;
 }
-.liner-black {
-  background: none repeat scroll 0 0 #000000;
-  display: inline-block;
-  height: 50px;
-  margin: 20px 0;
-  width: 1px;
-  opacity: 0.6;
-}
 .liner {
   background: none repeat scroll 0 0 #ffffff;
   display: inline-block;
@@ -310,8 +291,8 @@ ol {
   text-align: center;
 }
 #home .owl-pagination {
-  height: 80px;
-  margin-top: -83px;
+  height: 70px;
+  margin-top: -80px;
   position: relative;
   text-align: center;
   width: 100%;
@@ -468,13 +449,7 @@ ol {
 .no-para .para-img {
   background-attachment: scroll;
 }
-.bg1 .para-img {
-  background-image: url("../images/bg/1.jpg");
-}
-.bg2 .para-img {
-  background-image: url("../images/bg/1.jpg");
-}
-.bg3 .para-img {
+.bg1 .bg2 .bg3 .para-img {
   background-image: url("../images/bg/1.jpg");
 }
 .big-text {
@@ -486,7 +461,7 @@ ol {
   z-index: 1;
 }
 .bg-mask {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.775);
   left: 0;
   position: absolute;
   width: 100%;
@@ -495,7 +470,7 @@ ol {
   z-index: 0;
 }
 .big-text h3 {
-  color: #ffffff;
+  color: #000000;
   font-size: 20px;
   font-weight: normal;
   letter-spacing: 4px;
@@ -520,7 +495,6 @@ ol {
   margin-bottom: 20px;
   text-transform: uppercase;
 }
-
 /*----------------------------PRICING TABLE----------------------------------*/
 .p-table {
   background: none repeat scroll 0 0 #ffffff;
@@ -681,27 +655,6 @@ textarea:focus {
   margin: 10px 0 25px;
   text-transform: uppercase;
 }
-/*----------------------------MAP SECTION-------------------------*/
-#map_canvas {
-  height: 500px;
-}
-#map_canvas img {
-  max-width: inherit;
-}
-.box-map {
-  line-height: 1;
-  padding: 20px 0 20px 20px;
-  width: 100%;
-  text-align: center;
-}
-.box-map h3 {
-  color: #777777;
-  font-family: inherit;
-  font-size: 20px;
-}
-#map_canvas .box-map img {
-  max-width: 100%;
-}
 /*----------------------------FOOTER SECTION-------------------------*/
 .footer-icon {
   list-style: none outside none;
@@ -725,92 +678,6 @@ textarea:focus {
 #footer p {
   font-size: 13px;
 }
-/*------------------BLOG SECTION------------------------------------*/
-.blog-page .header {
-  background: none repeat scroll 0 0 #1f1f1f;
-  padding: 20px 0;
-  position: relative;
-}
-.pagination > .active > a,
-.pagination > .active > span,
-.pagination > .active > a:hover,
-.pagination > .active > span:hover,
-.pagination > .active > a:focus,
-.pagination > .active > span:focus {
-  background-color: #000000;
-  border-color: #000000;
-  color: #ffffff;
-  cursor: default;
-  z-index: 2;
-}
-.pagination li a:hover {
-  color: #1f1f1f;
-}
-.blog-title {
-  font-size: 27px;
-  letter-spacing: 3px;
-  margin: 0;
-  text-transform: capitalize;
-}
-.post-detail div {
-  display: inline-block;
-  font-size: 12px;
-  padding-right: 10px;
-}
-.post-detail i {
-  color: #1f1f1f;
-  height: 30px;
-  letter-spacing: 0;
-  line-height: 26px;
-  padding-right: 2px;
-  text-align: center;
-  vertical-align: baseline;
-  width: 30px;
-  font-weight: 700;
-}
-.post-detail p {
-  margin: 0;
-}
-.blog-box {
-  border-bottom: 4px solid #1f1f1f;
-  margin-bottom: 20px;
-  min-height: 60px;
-  padding-bottom: 20px;
-  position: relative;
-}
-.post-date {
-  background: none repeat scroll 0 0 #1f1f1f;
-  border-radius: 100px;
-  color: #ffffff;
-  font-size: 11px;
-  font-style: italic;
-  height: 45px;
-  left: 0;
-  line-height: 1;
-  margin-top: -28px;
-  padding: 10px;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  width: 45px;
-}
-.post-date span {
-  display: block;
-}
-.blog-box > a,
-.single-blog .blog-title {
-  display: block;
-  padding-left: 60px;
-  padding-top: 10px;
-}
-.post-detail {
-  padding-top: 10px;
-}
-.blog-post {
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 40px;
-}
-
 /*-----------------------------------------SIDEBAR SECTION-------------------------------------------*/
 .widgettitle {
   font-size: 18px;
@@ -1005,17 +872,10 @@ textarea:focus {
   .port-filter > li {
     margin-bottom: 5px;
   }
-  .blog-box > a,
-  .single-blog .blog-title {
-    padding-left: 0;
-  }
   .post-date {
     left: auto;
     margin: 0;
     position: relative;
     top: auto;
-  }
-  .blog-title {
-    font-size: 23px;
   }
 }
