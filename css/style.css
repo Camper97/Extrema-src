@@ -261,23 +261,22 @@ ol {
 /*-------------------SLIDER SECTION----------------------------------*/
 
 .img-bg {
-  background-position: center center;
+  background-position: center;
   background-size: cover;
 }
 .slider-mask {
-  background-color: rgba(20, 20, 20, 0.4);
+  background-color: rgba(20, 20, 20, 0.2);
   height: 100%;
   left: 0;
   position: absolute;
   top: 0;
   width: 100%;
-}
-.caption-box {
-  padding: 14% 0;
+  padding: 25% 0;
   text-align: center;
   position: relative;
   z-index: 1;
 }
+
 .liner-black {
   background: none repeat scroll 0 0 #000000;
   display: inline-block;
