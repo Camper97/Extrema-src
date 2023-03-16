@@ -265,13 +265,17 @@ ol {
   background-size: cover;
 }
 .slider-mask {
-  background-color: rgba(20, 20, 20, 0.2);
+  
   height: 100%;
   left: 0;
   position: absolute;
   top: 0;
-  width: 100%;
-  padding: 25% 0;
+ 
+}
+.caption-box {
+  background-color: rgba(20, 20, 20, 0.7);
+   width: 100%;
+  padding: 11% 0;
   text-align: center;
   position: relative;
   z-index: 1;
